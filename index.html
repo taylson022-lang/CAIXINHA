@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <title>Relatórios Caixinha - Login</title>
+    <title>Relatórios Caixinha - Histórico</title>
     <style>
         body {
             background: #111;
@@ -48,47 +48,70 @@
         }
     </style>
     <script>
+        // Senhas conforme sua última tabela (imagem 7)
+        var dados = {
+            "TAYLSON LIMA": "Taylson228301",
+            "ARLETE GUIMARÃES": "Arlete949328",
+            "DIEGO GAMA": "Diego825679",
+            "MARIA LIMA": "Maria519750",
+            "SARYNES NOBRE": "Sarynes527358",
+            "RAYSSA ALMEIDA": "Rayssa451076",
+            "JADIEL VICENTE": "Jadiel746353",
+            "YASMIN SILVA": "Yasmin408216",
+            "RUANNA ROCHA": "Ruanna549369",
+            "JOSIANE HOLANDA": "Josiane399885",
+            "CYNTHIA COUTINHO": "Cynthia980974",
+            "VANDO COUTINHO": "Vando519277",
+            "CLAUDIA IGLEZIAS": "Claudia464063",
+            "CARLA RENATA": "Carla119852",
+            "ABIGAIL IGLEZIAS": "Abigail728379",
+            "DONA ANA": "Dona358121",
+            "SILVANA": "Silvana577244",
+            "TAYLSON LIMA 2": "Taylson986492",
+            "DEVID DIAS": "Devid319711",
+            "DEVID DIAS 2": "Devid245430",
+            "FRANCISCO IGLEZIAS": "Francisco516602",
+            "TAYANA ARAUJO": "Tayana742844",
+            "CLAYTON COSTA": "Clayton360441",
+            "KATIA COSTA": "Katia180988",
+            "DENILSE COSTA": "Denilse853571",
+            "MILENY": "Mileny271096",
+            "JOAO": "Joao573160",
+            "SR. REIS": "Sr.Reis703847",
+            "ELENIR": "Elenir854903",
+            "EDUARDO GABRIEL": "Eduardo943699"
+        };
+
+        // Mude aqui para adicionar/remover meses disponíveis
+        var meses = [
+            { value: "2025-08", label: "Agosto/2025" },
+            { value: "2025-09", label: "Setembro/2025" }
+            // Adicione mais meses conforme necessário
+        ];
+
+        window.onload = function() {
+            var mesSelect = document.getElementById('mes');
+            meses.forEach(function(m) {
+                var op = document.createElement('option');
+                op.value = m.value;
+                op.textContent = m.label;
+                mesSelect.appendChild(op);
+            });
+        };
+
         function acessarRelatorio() {
             var participante = document.getElementById('participante').value;
             var senha = document.getElementById('senha').value;
+            var mes = document.getElementById('mes').value;
             var erro = document.getElementById('erro');
             erro.textContent = "";
 
-            var dados = {
-                "TAYLSON LIMA": { senha: "Taylson228301", arquivo: "Relatorio_Caixinha_TAYLSON_LIMA_2025-09.html" },
-                "ARLETE GUIMARÃES": { senha: "Arlete949328", arquivo: "Relatorio_Caixinha_ARLETE_GUIMARAES_2025-09.html" },
-                "DIEGO GAMA": { senha: "Diego825679", arquivo: "Relatorio_Caixinha_DIEGO_GAMA_2025-09.html" },
-                "MARIA LIMA": { senha: "Maria519750", arquivo: "Relatorio_Caixinha_MARIA_LIMA_2025-09.html" },
-                "SARYNES NOBRE": { senha: "Sarynes527358", arquivo: "Relatorio_Caixinha_SARYNES_NOBRE_2025-09.html" },
-                "RAYSSA ALMEIDA": { senha: "Rayssa451076", arquivo: "Relatorio_Caixinha_RAYSSA_ALMEIDA_2025-09.html" },
-                "JADIEL VICENTE": { senha: "Jadiel746353", arquivo: "Relatorio_Caixinha_JADIEL_VICENTE_2025-09.html" },
-                "YASMIN SILVA": { senha: "Yasmin408216", arquivo: "Relatorio_Caixinha_YASMIN_SILVA_2025-09.html" },
-                "RUANNA ROCHA": { senha: "Ruanna549369", arquivo: "Relatorio_Caixinha_RUANNA_ROCHA_2025-09.html" },
-                "JOSIANE HOLANDA": { senha: "Josiane399885", arquivo: "Relatorio_Caixinha_JOSIANE_HOLANDA_2025-09.html" },
-                "CYNTHIA COUTINHO": { senha: "Cynthia980974", arquivo: "Relatorio_Caixinha_CYNTHIA_COUTINHO_2025-09.html" },
-                "VANDO COUTINHO": { senha: "Vando519277", arquivo: "Relatorio_Caixinha_VANDO_COUTINHO_2025-09.html" },
-                "CLAUDIA IGLEZIAS": { senha: "Claudia464063", arquivo: "Relatorio_Caixinha_CLAUDIA_IGLEZIAS_2025-09.html" },
-                "CARLA RENATA": { senha: "Carla119852", arquivo: "Relatorio_Caixinha_CARLA_RENATA_2025-09.html" },
-                "ABIGAIL IGLEZIAS": { senha: "Abigail728379", arquivo: "Relatorio_Caixinha_ABIGAIL_IGLEZIAS_2025-09.html" },
-                "DONA ANA": { senha: "Dona358121", arquivo: "Relatorio_Caixinha_DONA_ANA_2025-09.html" },
-                "SILVANA": { senha: "Silvana577244", arquivo: "Relatorio_Caixinha_SILVANA_2025-09.html" },
-                "TAYLSON LIMA 2": { senha: "Taylson986492", arquivo: "Relatorio_Caixinha_TAYLSON_LIMA_2_2025-09.html" },
-                "DEVID DIAS": { senha: "Devid319711", arquivo: "Relatorio_Caixinha_DEVID_DIAS_2025-09.html" },
-                "DEVID DIAS 2": { senha: "Devid245430", arquivo: "Relatorio_Caixinha_DEVID_DIAS_2_2025-09.html" },
-                "FRANCISCO IGLEZIAS": { senha: "Francisco516602", arquivo: "Relatorio_Caixinha_FRANCISCO_IGLEZIAS_2025-09.html" },
-                "TAYANA ARAUJO": { senha: "Tayana742844", arquivo: "Relatorio_Caixinha_TAYANA_ARAUJO_2025-09.html" },
-                "CLAYTON COSTA": { senha: "Clayton360441", arquivo: "Relatorio_Caixinha_CLAYTON_COSTA_2025-09.html" },
-                "KATIA COSTA": { senha: "Katia180988", arquivo: "Relatorio_Caixinha_KATIA_COSTA_2025-09.html" },
-                "DENILSE COSTA": { senha: "Denilse853571", arquivo: "Relatorio_Caixinha_DENILSE_COSTA_2025-09.html" },
-                "MILENY": { senha: "Mileny271096", arquivo: "Relatorio_Caixinha_MILENY_2025-09.html" },
-                "JOAO": { senha: "Joao573160", arquivo: "Relatorio_Caixinha_JOAO_2025-09.html" },
-                "SR. REIS": { senha: "Sr.Reis703847", arquivo: "Relatorio_Caixinha_SR_REIS_2025-09.html" },
-                "ELENIR": { senha: "Elenir854903", arquivo: "Relatorio_Caixinha_ELENIR_2025-09.html" },
-                "EDUARDO GABRIEL": { senha: "Eduardo943699", arquivo: "Relatorio_Caixinha_EDUARDO_GABRIEL_2025-09.html" }
-            };
-
-            if (dados[participante] && senha === dados[participante].senha) {
-                window.location.href = dados[participante].arquivo;
+            if (dados[participante] && senha === dados[participante]) {
+                // Gera o nome do arquivo: Relatorio_Caixinha_NOME_YYYY-MM.html
+                var nomeArquivo = "Relatorio_Caixinha_" +
+                    participante.replace(/ /g, "_").toUpperCase() +
+                    "_" + mes + ".html";
+                window.location.href = nomeArquivo;
             } else {
                 erro.textContent = "Participante ou senha incorretos!";
             }
@@ -134,6 +157,10 @@
         </select>
         <label for="senha">Senha:</label>
         <input type="password" id="senha" autocomplete="off">
+        <label for="mes">Mês de referência:</label>
+        <select id="mes">
+            <!-- Opções de meses inseridas via JS -->
+        </select>
         <button onclick="acessarRelatorio()">Entrar</button>
     </div>
 </body>
