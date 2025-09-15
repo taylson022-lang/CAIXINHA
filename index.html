@@ -48,7 +48,7 @@
         }
     </style>
     <script>
-        // Senhas conforme sua última tabela (imagem 7)
+        // Senhas dos participantes
         var dados = {
             "TAYLSON LIMA": "Taylson228301",
             "ARLETE GUIMARÃES": "Arlete949328",
@@ -82,7 +82,9 @@
             "EDUARDO GABRIEL": "Eduardo943699"
         };
 
-        // Mude aqui para adicionar/remover meses disponíveis
+        // Senha do administrador
+        var senhaADM = "ADM2025"; // Altere para sua senha de administrador
+
         var meses = [
             { value: "2025-08", label: "Agosto/2025" },
             { value: "2025-09", label: "Setembro/2025" }
@@ -106,12 +108,16 @@
             var erro = document.getElementById('erro');
             erro.textContent = "";
 
-            if (dados[participante] && senha === dados[participante]) {
-                // Gera o nome do arquivo: Relatorio_Caixinha_NOME_YYYY-MM.html
-                var nomeArquivo = "Relatorio_Caixinha_" +
+            var nomeArquivo = "Relatorio_Caixinha_" +
                     participante.replace(/ /g, "_").toUpperCase() +
                     "_" + mes + ".html";
+
+            if (dados[participante] && senha === dados[participante]) {
                 window.location.href = nomeArquivo;
+            } else if (senha === senhaADM) {
+                // ADM pode acessar o relatório do participante selecionado para o mês escolhido
+                window.location.href = nomeArquivo;
+                // Se quiser uma página especial do ADM, troque para window.location.href = 'ADM.html';
             } else {
                 erro.textContent = "Participante ou senha incorretos!";
             }
@@ -162,6 +168,9 @@
             <!-- Opções de meses inseridas via JS -->
         </select>
         <button onclick="acessarRelatorio()">Entrar</button>
+        <div style="margin-top:10px; font-size:13px; color:#aaa;">
+            <b>Dica:</b> O administrador pode acessar qualquer relatório usando a senha especial.
+        </div>
     </div>
 </body>
 </html>
