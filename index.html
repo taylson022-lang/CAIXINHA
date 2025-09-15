@@ -1,53 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <title>Relatórios Caixinha</title>
-  <style>
-    body { background: #111; color: #eee; font-family: Arial, sans-serif; }
-    .menu { margin: 40px auto; width: 420px; background: #222; padding: 32px 24px; border-radius: 12px; box-shadow: 0 2px 8px #0004; }
-    h1 { text-align: center; margin-bottom: 24px; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 12px 0; }
-    a { color: #4A90E2; font-size: 18px; text-decoration: none; transition: color .2s; }
-    a:hover { color: #fff; }
-  </style>
+    <meta charset="utf-8">
+    <title>Relatórios Caixinha - Login</title>
+    <style>
+        body {
+            background: #111;
+            color: #eee;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin: 60px auto;
+            width: 340px;
+            background: #222;
+            padding: 32px 24px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px #0004;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label, select, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 12px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4A90E2;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #357ABD;
+        }
+        .erro {
+            color: #ff4444;
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        function acessarRelatorio() {
+            var participante = document.getElementById('participante').value;
+            var senha = document.getElementById('senha').value;
+            var erro = document.getElementById('erro');
+            erro.textContent = "";
+
+            var dados = {
+                "Abigail Iglesias": { senha: "abigail2025", arquivo: "Relatorio_Caixinha_ABIGAIL_IGLEZIAS_2025-09.html" },
+                "Carla Renata": { senha: "carla2025", arquivo: "Relatorio_Caixinha_CARLA_RENATA_2025-09.html" },
+                "Claudia Iglesias": { senha: "claudia2025", arquivo: "Relatorio_Caixinha_CLAUDIA_IGLEZIAS_2025-09.html" },
+                "Clayton Costa": { senha: "clayton2025", arquivo: "Relatorio_Caixinha_CLAYTON_COSTA_2025-09.html" },
+                "Cynthia Coutinho": { senha: "cynthia2025", arquivo: "Relatorio_Caixinha_CYNTHIA_COUTINHO_2025-09.html" },
+                "Denilse Costa": { senha: "denilse2025", arquivo: "Relatorio_Caixinha_DENILSE_COSTA_2025-09.html" },
+                "Devid Dias 1": { senha: "deviddias1", arquivo: "Relatorio_Caixinha_DEVID_DIAS_1_2025-09.html" },
+                "Devid Dias 2": { senha: "deviddias2", arquivo: "Relatorio_Caixinha_DEVID_DIAS_2_2025-09.html" },
+                "Dona Ana": { senha: "donaana2025", arquivo: "Relatorio_Caixinha_DONA_ANA_2025-09.html" },
+                "Eduardo Gabriel": { senha: "eduardo2025", arquivo: "Relatorio_Caixinha_EDUARDO_GABRIEL_2025-09.html" },
+                "Elenir": { senha: "elenir2025", arquivo: "Relatorio_Caixinha_ELENIR_2025-09.html" },
+                "Francisco Iglesias": { senha: "francisco2025", arquivo: "Relatorio_Caixinha_FRANCISCO_IGLEZIAS_2025-09.html" },
+                "Joao": { senha: "joao2025", arquivo: "Relatorio_Caixinha_JOAO_2025-09.html" },
+                "Katia Costa": { senha: "katia2025", arquivo: "Relatorio_Caixinha_KATIA_COSTA_2025-09.html" },
+                "Mileny": { senha: "mileny2025", arquivo: "Relatorio_Caixinha_MILENY_2025-09.html" },
+                "Silvana": { senha: "silvana2025", arquivo: "Relatorio_Caixinha_SILVANA_2025-09.html" },
+                "Sr Reis": { senha: "srreis2025", arquivo: "Relatorio_Caixinha_SR_REIS_2025-09.html" },
+                "Tayana Araujo": { senha: "tayana2025", arquivo: "Relatorio_Caixinha_TAYANA_ARAUJO_2025-09.html" },
+                "Taylson Lima 2": { senha: "taylson22025", arquivo: "Relatorio_Caixinha_TAYLSON_LIMA_2_2025-09.html" },
+                "Vando Coutinho": { senha: "vando2025", arquivo: "Relatorio_Caixinha_VANDO_COUTINHO_2025-09.html" },
+                "Arlete Guimaraes": { senha: "arlete2025", arquivo: "Relatorio_Caixinha_ARLETE_GUIMARAES_2025-09.html" },
+                "Diego Gama": { senha: "diego2025", arquivo: "Relatorio_Caixinha_DIEGO_GAMA_2025-09.html" },
+                "Jadiel Vicente": { senha: "jadiel2025", arquivo: "Relatorio_Caixinha_JADIEL_VICENTE_2025-09.html" },
+                "Josiane Holanda": { senha: "josiane2025", arquivo: "Relatorio_Caixinha_JOSIANE_HOLANDA_2025-09.html" },
+                "Maria Lima": { senha: "maria2025", arquivo: "Relatorio_Caixinha_MARIA_LIMA_2025-09.html" },
+                "Rayssa Almeida": { senha: "rayssa2025", arquivo: "Relatorio_Caixinha_RAYSSA_ALMEIDA_2025-09.html" },
+                "Ruanna Rocha": { senha: "ruanna2025", arquivo: "Relatorio_Caixinha_RUANNA_ROCHA_2025-09.html" },
+                "Sarynes Nobre": { senha: "sarynes2025", arquivo: "Relatorio_Caixinha_SARYNES_NOBRE_2025-09.html" },
+                "Taylson Lima": { senha: "taylson2025", arquivo: "Relatorio_Caixinha_TAYLSON_LIMA_2025-09.html" },
+                "Yasmin Silva": { senha: "yasmin2025", arquivo: "Relatorio_Caixinha_YASMIN_SILVA_2025-09.html" }
+            };
+
+            if (dados[participante] && senha === dados[participante].senha) {
+                window.location.href = dados[participante].arquivo;
+            } else {
+                erro.textContent = "Participante ou senha incorretos!";
+            }
+        }
+    </script>
 </head>
 <body>
-  <div class="menu">
-    <h1>Relatórios Caixinha</h1>
-    <ul>
-      <li><a href="Relatorio_Caixinha_ABIGAIL_IGLEZIAS_2025-09.html">Abigail Iglezias</a></li>
-      <li><a href="Relatorio_Caixinha_CARLA_RENATA_2025-09.html">Carla Renata</a></li>
-      <li><a href="Relatorio_Caixinha_CLAUDIA_IGLEZIAS_2025-09.html">Claudia Iglezias</a></li>
-      <li><a href="Relatorio_Caixinha_CLAYTON_COSTA_2025-09.html">Clayton Costa</a></li>
-      <li><a href="Relatorio_Caixinha_CYNTHIA_COUTINHO_2025-09.html">Cynthia Coutinho</a></li>
-      <li><a href="Relatorio_Caixinha_DENILSE_COSTA_2025-09.html">Denilse Costa</a></li>
-      <li><a href="Relatorio_Caixinha_DEVYID_DIAS_2_2025-09.html">Devyid Dias 2</a></li>
-      <li><a href="Relatorio_Caixinha_DEVYID_DIAS_2025-09.html">Devyid Dias</a></li>
-      <li><a href="Relatorio_Caixinha_DONA_ANA_2025-09.html">Dona Ana</a></li>
-      <li><a href="Relatorio_Caixinha_EDUARDO_GABRIEL_2025-09.html">Eduardo Gabriel</a></li>
-      <li><a href="Relatorio_Caixinha_ELENIR_2025-09.html">Elenir</a></li>
-      <li><a href="Relatorio_Caixinha_FRANCISCO_IGLEZIAS_2025-09.html">Francisco Iglezias</a></li>
-      <li><a href="Relatorio_Caixinha_JOAO_2025-09.html">João</a></li>
-      <li><a href="Relatorio_Caixinha_KATIA_COSTA_2025-09.html">Katia Costa</a></li>
-      <li><a href="Relatorio_Caixinha_MILENY_2025-09.html">Mileny</a></li>
-      <li><a href="Relatorio_Caixinha_SILVANA_2025-09.html">Silvana</a></li>
-      <li><a href="Relatorio_Caixinha_SR._REIS_2025-09.html">Sr. Reis</a></li>
-      <li><a href="Relatorio_Caixinha_TAYANA_ARAUJO_2025-09.html">Tayana Araújo</a></li>
-      <li><a href="Relatorio_Caixinha_TAYLSON_LIMA_2_2025-09.html">Taylson Lima 2</a></li>
-      <li><a href="Relatorio_Caixinha_VANDO_COUTINHO_2025-09.html">Vando Coutinho</a></li>
-      <li><a href="Relatorio_Caixinha_ARLETE_GUIMARAES_2025-09.html">Arlete Guimarães</a></li>
-      <li><a href="Relatorio_Caixinha_DIEGO_GAMA_2025-09.html">Diego Gama</a></li>
-      <li><a href="Relatorio_Caixinha_JADIEL_VICENTE_2025-09.html">Jadiel Vicente</a></li>
-      <li><a href="Relatorio_Caixinha_JOSIANE_HOLANDA_2025-09.html">Josiane Holanda</a></li>
-      <li><a href="Relatorio_Caixinha_MARIA_LIMA_2025-09.html">Maria Lima</a></li>
-      <li><a href="Relatorio_Caixinha_RAYSSA_ALMEIDA_2025-09.html">Rayssa Almeida</a></li>
-      <li><a href="Relatorio_Caixinha_RUANNA_ROCHA_2025-09.html">Ruanna Rocha</a></li>
-      <li><a href="Relatorio_Caixinha_SARYNES_NOBRE_2025-09.html">Sarynes Nobre</a></li>
-      <li><a href="Relatorio_Caixinha_TAYLSON_LIMA_2025-09.html">Taylson Lima</a></li>
-      <li><a href="Relatorio_Caixinha_YASMIN_SILVA_2025-09.html">Yasmin Silva</a></li>
-    </ul>
-  </div>
+    <div class="container">
+        <h1>Acesso ao Relatório</h1>
+        <div id="erro" class="erro"></div>
+        <label for="participante">Participante:</label>
+        <select id="participante">
+            <option>Abigail Iglesias</option>
+            <option>Carla Renata</option>
+            <option>Claudia Iglesias</option>
+            <option>Clayton Costa</option>
+            <option>Cynthia Coutinho</option>
+            <option>Denilse Costa</option>
+            <option>Devid Dias 1</option>
+            <option>Devid Dias 2</option>
+            <option>Dona Ana</option>
+            <option>Eduardo Gabriel</option>
+            <option>Elenir</option>
+            <option>Francisco Iglesias</option>
+            <option>Joao</option>
+            <option>Katia Costa</option>
+            <option>Mileny</option>
+            <option>Silvana</option>
+            <option>Sr Reis</option>
+            <option>Tayana Araujo</option>
+            <option>Taylson Lima 2</option>
+            <option>Vando Coutinho</option>
+            <option>Arlete Guimaraes</option>
+            <option>Diego Gama</option>
+            <option>Jadiel Vicente</option>
+            <option>Josiane Holanda</option>
+            <option>Maria Lima</option>
+            <option>Rayssa Almeida</option>
+            <option>Ruanna Rocha</option>
+            <option>Sarynes Nobre</option>
+            <option>Taylson Lima</option>
+            <option>Yasmin Silva</option>
+        </select>
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" autocomplete="off">
+        <button onclick="acessarRelatorio()">Entrar</button>
+    </div>
 </body>
 </html>
