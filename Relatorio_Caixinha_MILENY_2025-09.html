@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+* { box-sizing: border-box; }
+body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; background: #ffffff; color: #000000; }
+.wrapper { width: 1100px; margin: 0 auto; padding: 12px 20px 32px; }
+.header { background: #ffffff !important; border: 1px solid #000 !important; border-radius: 14px; padding: 16px 18px; margin-bottom: 18px; }
+.header .title { font-size: 22px; font-weight: 800; margin: 0; color: #000; }
+.header .subtitle { margin: 6px 0 0 0; color: #000; font-size: 14px; }
+.section { margin: 14px 0 10px; }
+.section h2 { font-size: 16px; font-weight: 800; color: #000; border-bottom: 2px solid #4A90E2; padding-bottom: 4px; margin: 0 0 10px 0; }
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.card { background: #e5e7eb !important; border: 1px solid #000 !important; border-radius: 14px; padding: 12px; }
+.card .label { color: #111; font-size: 12px; margin-bottom: 6px; font-weight: 700; }
+.card .value { font-size: 20px; font-weight: 900; color: #000; }
+.table { width: 100%; border-collapse: collapse; margin-top: 6px; font-size: 12px; }
+.table th, .table td { border: 1px solid #000; padding: 6px 8px; text-align: center; background:#ffffff; }
+.table th { background: #e5e7eb; color: #000; font-weight: 800; border: 1px solid #000; }
+.table td { color: #000; }
+.table tfoot td { background: #e5e7eb !important; font-weight: 800; border: 1px solid #000; }
+.badge { display:inline-block; padding: 4px 8px; border-radius: 999px; font-weight:700; font-size: 11px; border:1px solid rgba(0,0,0,.1); }
+.badge.ok { background: #d1fae5; color:#111; border-color:#10b98133; } .badge.warn { background:#fee2e2; color:#111; border-color:#ef444433; } .badge.zero { background:#e5e7eb; color:#111; border-color:#9ca3af55; }
+.section h3 { color:#000; } .footer { margin-top: 14px; font-size:11px; color:#6b7280; text-align:center; }
+@page { size: A4 landscape; margin: 14mm; }
+.page-break { page-break-before: always; }
+.pos{color:#22c55e;font-weight:800}
+.neg{color:#ef4444;font-weight:800}
+</style>
+<title>Relatório - MILENY</title>
+</head>
+<body>
+<div class="wrapper">
+  <div class="header">
+    <div class="title">Relatório Caixinha 2025 — MILENY</div>
+    <div class="subtitle">Ref. Agosto de 2025 • Status: <span class="badge warn">A Pagar</span></div>
+  </div>
+
+  <div class="section">
+    <h2>📊 Resumo</h2>
+    <div class="grid"><div class="card"><div class="label">Qdt de Cotas</div><div class="value">16</div></div><div class="card"><div class="label">Qdt a Pagar</div><div class="value">-8</div></div><div class="card"><div class="label">Valor Contratado</div><div class="value">R$ 1.200,00</div></div><div class="card"><div class="label">Valor Arrecadado</div><div class="value">R$ 791,95</div></div><div class="card"><div class="label">Total Emp. Simples (adq.)</div><div class="value">R$ 38,00</div></div><div class="card"><div class="label">Total Emp. Parcelado (adq.)</div><div class="value">R$ 2.600,00</div></div><div class="card"><div class="label">Min. a Emprestar</div><div class="value">R$ 0,00</div></div><div class="card"><div class="label">Cotas a Pagar (M)</div><div class="value"><span class="neg">R$ -408,05</span></div></div><div class="card"><div class="label">Emp. Simples a Pagar (S)</div><div class="value"><span class="neg">R$ -256,42</span></div></div><div class="card"><div class="label">Emp. Parcelado a Pagar (AJ)</div><div class="value"><span class="neg">R$ -2.218,90</span></div></div><div class="card"><div class="label">Juros s/ Saldo (K)</div><div class="value"><span class="pos">R$ 0,00</span></div></div><div class="card"><div class="label">Lucro Atual (O)</div><div class="value"><span class="pos">R$ 313,76</span></div></div><div class="card"><div class="label">Variação do Lucro</div><div class="value"><span class="pos">39,62%</span></div></div><div class="card"><div class="label">Resultado Final (P)</div><div class="value"><span class="neg">R$ -1.377,65</span> <span class="badge warn">A Pagar</span></div></div></div>
+  </div>
+
+  <div class="section page-break">
+    <h2>💰 Cotas</h2>
+    <table class="table">
+      <thead><tr><th>#</th><th>Valor da Cota</th><th>Qtd</th><th>Total Cota</th><th>Vencimento</th><th>Juros s/ Atraso</th><th>Dias em Atraso</th><th>Saldo Devedor</th><th>Total Pago</th><th>Total a Pagar</th></tr></thead>
+      <tbody><tr><td>1º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>10/12/2024</td><td>R$ 0,00</td><td>nan</td><td>R$ 100,00</td><td>R$ 100,00</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>2º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>28/01/2025</td><td>R$ 1,40</td><td>4.0</td><td>R$ 101,40</td><td>R$ 101,40</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>3º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>28/02/2025</td><td>R$ 2,45</td><td>7.0</td><td>R$ 102,45</td><td>R$ 102,45</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>4º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/03/2025</td><td>R$ 2,45</td><td>7.0</td><td>R$ 102,45</td><td>R$ 102,45</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>5º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/04/2025</td><td>R$ 4,55</td><td>13.0</td><td>R$ 104,55</td><td>R$ 104,55</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>6º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/05/2025</td><td>R$ 31,95</td><td>71.0</td><td>R$ 131,95</td><td>R$ 131,95</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>7º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/06/2025</td><td>R$ 14,00</td><td>40.0</td><td>R$ 114,00</td><td>R$ 114,00</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>8º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/07/2025</td><td>R$ 3,50</td><td>10.0</td><td>R$ 103,50</td><td>R$ 103,50</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>9º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/08/2025</td><td>R$ 8,05</td><td>23.0</td><td>R$ 108,05</td><td>R$ 0,00</td><td><span class="neg">R$ -108,05</span></td></tr><tr><td>10º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/09/2025</td><td>R$ 0,00</td><td>nan</td><td>R$ 100,00</td><td>R$ 0,00</td><td><span class="neg">R$ -100,00</span></td></tr><tr><td>11º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/10/2025</td><td>R$ 0,00</td><td>nan</td><td>R$ 100,00</td><td>R$ 0,00</td><td><span class="neg">R$ -100,00</span></td></tr><tr><td>12º</td><td>R$ 50,00</td><td>2.0</td><td>R$ 100,00</td><td>25/11/2025</td><td>R$ 0,00</td><td>nan</td><td>R$ 100,00</td><td>R$ 0,00</td><td><span class="neg">R$ -100,00</span></td></tr></tbody>
+      <tfoot>
+        <tr><td colspan="3"><b>Totais</b></td><td>R$ 1.200,00</td><td></td><td>R$ 68,35</td><td></td><td>R$ 1.268,35</td><td>R$ 860,30</td><td>R$ -408,05</td></tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="section page-break">
+    <h2>💳 Empréstimos</h2>
+    <table class="table">
+      <thead><tr><th>Tipo</th><th>Valor Emprestado</th><th>Juros s/ Emp.</th><th>Saldo Devedor</th><th>Juros s/ Parc.</th><th>Juros s/ Atraso</th><th>Total Pago</th><th>Saldo a Pagar</th></tr></thead>
+      <tbody>
+        <tr><td>Simples</td><td>R$ 38,00</td><td>R$ 5,70</td><td>R$ 388,30</td><td>R$ 0,00</td><td>R$ 344,60</td><td>R$ 131,88</td><td><span class="neg">R$ -256,42</span></td></tr>
+        <tr><td>Parcelado</td><td>R$ 2.600,00</td><td>R$ 390,00</td><td>R$ 3.180,77</td><td>R$ 190,77</td><td>R$ 0,00</td><td>R$ 961,88</td><td><span class="neg">R$ -2.218,90</span></td></tr>
+      </tbody>
+      <tfoot>
+        <tr><td><b>Total</b></td><td>R$ 2.638,00</td><td>R$ 395,70</td><td>R$ 3.569,07</td><td>R$ 190,77</td><td>R$ 344,60</td><td>R$ 1.093,76</td><td><span class="neg">R$ -2.475,31</span></td></tr>
+      </tfoot>
+    </table>
+
+    <h3 style="margin:10px 0 4px 0;">Detalhes — Simples</h3>
+    <table class="table">
+      <thead><tr><th>#</th><th>Valor Emprestado</th><th>Vencimento</th><th>Juros s/ Emp.</th><th>Juros s/ Atraso</th><th>Saldo Devedor</th><th>Total Pago</th><th>Total a Pagar</th></tr></thead>
+      <tbody><tr><td>1º</td><td>R$ 8,00</td><td>17/03/2025</td><td>R$ 1,20</td><td>R$ 0,28</td><td>R$ 9,48</td><td>R$ 9,48</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>2º</td><td>R$ 10,00</td><td>15/04/2025</td><td>R$ 1,50</td><td>R$ 0,00</td><td>R$ 11,50</td><td>R$ 11,50</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>3º</td><td>R$ 0,00</td><td>05/03/2025</td><td>R$ 0,00</td><td>R$ 10,79</td><td>R$ 10,79</td><td>R$ 10,79</td><td><span class="neg">R$ -0,00</span></td></tr><tr><td>4º</td><td>R$ 10,00</td><td>15/05/2025</td><td>R$ 1,50</td><td>R$ 0,00</td><td>R$ 11,50</td><td>R$ 11,50</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>5º</td><td>R$ 10,00</td><td>22/06/2025</td><td>R$ 1,50</td><td>R$ 0,99</td><td>R$ 12,49</td><td>R$ 12,49</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>6º</td><td>R$ 0,00</td><td>29/04/2025</td><td>R$ 0,00</td><td>R$ 34,06</td><td>R$ 34,06</td><td>R$ 26,09</td><td><span class="neg">R$ -7,97</span></td></tr><tr><td>7º</td><td>R$ 0,00</td><td>29/05/2025</td><td>R$ 0,00</td><td>R$ 26,82</td><td>R$ 26,82</td><td>R$ 2,04</td><td><span class="neg">R$ -24,78</span></td></tr><tr><td>8º</td><td>R$ 0,00</td><td>24/05/2025</td><td>R$ 0,00</td><td>R$ 86,14</td><td>R$ 86,14</td><td>R$ 0,00</td><td><span class="neg">R$ -86,14</span></td></tr><tr><td>9º</td><td>R$ 0,00</td><td>23/06/2025</td><td>R$ 0,00</td><td>R$ 36,39</td><td>R$ 36,39</td><td>R$ 36,39</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>10º</td><td>R$ 0,00</td><td>23/07/2025</td><td>R$ 0,00</td><td>R$ 41,59</td><td>R$ 41,59</td><td>R$ 0,00</td><td><span class="neg">R$ -41,59</span></td></tr><tr><td>11º</td><td>R$ 0,00</td><td>28/06/2025</td><td>R$ 0,00</td><td>R$ 19,57</td><td>R$ 19,57</td><td>R$ 11,60</td><td><span class="neg">R$ -7,97</span></td></tr><tr><td>12º</td><td>R$ 0,00</td><td>29/06/2025</td><td>R$ 0,00</td><td>R$ 51,76</td><td>R$ 51,76</td><td>R$ 0,00</td><td><span class="neg">R$ -51,76</span></td></tr><tr><td>13º</td><td>R$ 0,00</td><td>22/08/2025</td><td>R$ 0,00</td><td>R$ 19,31</td><td>R$ 19,31</td><td>R$ 0,00</td><td><span class="neg">R$ -19,31</span></td></tr><tr><td>14º</td><td>R$ 0,00</td><td>21/09/2025</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td>R$ 0,00</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>15º</td><td>R$ 0,00</td><td>29/07/2025</td><td>R$ 0,00</td><td>R$ 12,08</td><td>R$ 12,08</td><td>R$ 0,00</td><td><span class="neg">R$ -12,08</span></td></tr><tr><td>16º</td><td>R$ 0,00</td><td>28/08/2025</td><td>R$ 0,00</td><td>R$ 4,83</td><td>R$ 4,83</td><td>R$ 0,00</td><td><span class="neg">R$ -4,83</span></td></tr></tbody>
+    <tfoot><tr><td><b>Total</b></td><td>R$ 38,00</td><td></td><td>R$ 5,70</td><td>R$ 344,60</td><td>R$ 388,30</td><td>R$ 131,88</td><td><span class="neg">R$ -256,42</span></td></tr></tfoot>
+    </table>
+
+    <h3 style="margin:14px 0 4px 0;">Detalhes — Parcelado</h3>
+    <table class="table">
+      <thead><tr><th>#</th><th>Valor</th><th>Vencimento</th><th>Juros s/ Emp.</th><th>Juros Parc.</th><th>Saldo Devedor</th><th>Total Pago</th><th>Saldo a Pagar</th></tr></thead>
+      <tbody><tr><td>1º</td><td>R$ 500,00</td><td>05/03/2025</td><td>R$ 75,00</td><td>R$ 24,49</td><td>R$ 599,49</td><td>R$ 599,49</td><td><span class="pos">R$ 0,00</span></td></tr><tr><td>2º</td><td>R$ 300,00</td><td>29/04/2025</td><td>R$ 45,00</td><td>R$ 17,39</td><td>R$ 362,39</td><td>R$ 362,39</td><td><span class="neg">R$ -0,00</span></td></tr><tr><td>3º</td><td>R$ 1.500,00</td><td>24/05/2025</td><td>R$ 225,00</td><td>R$ 131,50</td><td>R$ 1.856,50</td><td>R$ 0,00</td><td><span class="neg">R$ -1.856,50</span></td></tr><tr><td>4º</td><td>R$ 300,00</td><td>29/06/2025</td><td>R$ 45,00</td><td>R$ 17,39</td><td>R$ 362,39</td><td>R$ 0,00</td><td><span class="neg">R$ -362,39</span></td></tr></tbody>
+    <tfoot><tr><td><b>Total</b></td><td>R$ 2.600,00</td><td></td><td>R$ 390,00</td><td>R$ 190,77</td><td>R$ 3.180,77</td><td>R$ 961,88</td><td><span class="neg">R$ -2.218,90</span></td></tr></tfoot>
+    </table>
+  </div>
+
+  <div class="footer">Gerado em 17/09/2025 23:26:41 • Ref. Agosto de 2025</div>
+</div>
+</body>
+</html>
